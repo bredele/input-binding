@@ -7,7 +7,7 @@
 <body>
   <div class="wrapper">
     <input data-input="inner" type="text">
-    <p>{@inner}</p>
+    <p data-text="inner"></p>
   </div>
   <script src="../build/build.js"></script>
   <script>
@@ -15,17 +15,19 @@
         Emitter = require('emitter'),
         Input = require('input-binding');
 
-    var model = {
+    var test = {
       inner : ''
     };
 
-    Emitter(model);
+    Emitter(test);
 
     var dom =document.querySelector('.wrapper');
 
-    var view = reactive(dom, model);
+    //doesn't work with the latest version of reactive
+    //I testes with 0.10.0
+    var view = reactive(dom, test);
 
-    //Input(view);
+    Input(view);
   </script>
 </body>
 </html>
