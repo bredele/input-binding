@@ -5,6 +5,27 @@
   <title>Input binding</title>
 </head>
 <body>
-  
+  <div class="wrapper">
+    <input data-input="inner" type="text">
+    <p>{@inner}</p>
+  </div>
+  <script src="../build/build.js"></script>
+  <script>
+    var reactive = require('reactive'),
+        Emitter = require('emitter'),
+        Input = require('input-binding');
+
+    var model = {
+      inner : ''
+    };
+
+    Emitter(model);
+
+    var dom =document.querySelector('.wrapper');
+
+    var view = reactive(dom, model);
+
+    //Input(view);
+  </script>
 </body>
 </html>
