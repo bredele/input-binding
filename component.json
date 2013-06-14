@@ -1,0 +1,16 @@
+{
+  "name": "input-binding",
+  "repo": "bredele/input-binding",
+  "description": "A double data binding for Reactive",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/event": "0.1.0"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
