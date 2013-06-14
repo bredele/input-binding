@@ -4,13 +4,16 @@
 
 var event = require('event');
 /**
- * Expose 'Delegate Binding'
+ * Expose 'Input Binding'
  */
 
-module.exports = function(el, model) {
-
-  event.bind(el, 'input', function(){
-    
+module.exports = function(reactive) {
+  var view = reactive;
+  view.bind('data-input', function(el, name){
+    event.bind(el, 'input', function(e){
+       view.obj[name] = e.target.value;
+       view.obj.emit('change ' + name);
+    });
   });
 
 };
